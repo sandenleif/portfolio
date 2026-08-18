@@ -13,10 +13,10 @@ export const site = {
   name: "Leif Sanden",
   /** Kurzform für die Navigation und Metadaten. */
   shortName: "Leif",
-  role: "Interaction Designer & Frontend Engineer",
+  role: "Web Developer & Systems Engineer",
   /** Ein Satz. Erscheint als Meta-Description. */
   intro:
-    "I build interfaces that feel right — fast, quiet, and considered down to the last movement.",
+    "I build websites for small businesses and run the servers behind them — from the first sketch to the machine it lives on.",
   location: "Germany",
   email: "admin@sanden-hosting.org",
   /** Absolute URL der Produktionsseite. Wird für OG-Tags und die Sitemap gebraucht. */
@@ -34,11 +34,11 @@ export const site = {
  */
 export const heroLines = [
   "Leif Sanden",
-  "is an interaction",
-  "designer and",
-  "frontend engineer",
-  "working on",
-  "[quiet interfaces](/craft)",
+  "builds websites",
+  "and runs the",
+  "servers behind them",
+  "for small businesses",
+  "[across Germany](/projects)",
 ];
 
 /** Die Zeilen des Manifests auf der vorletzten Tafel. */
