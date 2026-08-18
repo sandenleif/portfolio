@@ -3,6 +3,10 @@
  *
  * Alles, was auf der Seite an Text, Links und Einträgen erscheint, steht hier.
  * Zum Personalisieren nur diese Datei anpassen — die Komponenten bleiben unberührt.
+ *
+ * ACHTUNG: Projekte, Werdegang und Links sind Platzhalter und beschreiben
+ * keine tatsächlichen Arbeitsverhältnisse. Vor dem Veröffentlichen durch
+ * echte Angaben ersetzen.
  */
 
 export const site = {
@@ -33,8 +37,8 @@ export const heroLines = [
   "is an interaction",
   "designer and",
   "frontend engineer",
-  "working with",
-  "[Vercel](https://vercel.com)",
+  "working on",
+  "[quiet interfaces](/craft)",
 ];
 
 /** Die Zeilen des Manifests auf der vorletzten Tafel. */
@@ -86,41 +90,38 @@ export type Project = {
   tags?: string[];
 };
 
+/** Platzhalter — durch echte Arbeiten ersetzen. */
 export const projects: Project[] = [
   {
-    title: "Atlas",
+    title: "First project",
     description:
-      "Design system and component library for a product built by six teams. From tokens to documentation.",
+      "One sentence on what it was. A design system, a dashboard, a tool — say what it did, not which framework built it.",
     period: "2024 — now",
-    role: "Lead Design Engineer",
-    href: "https://example.com/atlas",
+    role: "Your role",
     tags: ["React", "Design System", "Tokens"],
   },
   {
-    title: "Kestrel",
+    title: "Second project",
     description:
-      "Real-time dashboard for infrastructure metrics. Thirty thousand data points a second, without the interface ever stuttering.",
+      "The second line is where the constraint goes: the thing that made it hard, and what it cost to solve.",
     period: "2023 — 2024",
-    role: "Frontend Engineer",
-    href: "https://example.com/kestrel",
+    role: "Your role",
     tags: ["Next.js", "WebGL", "Streaming"],
   },
   {
-    title: "Notebook",
+    title: "Third project",
     description:
-      "A writing tool with a collaborative editor and offline support. Conflict-free syncing through CRDTs.",
+      "Keep these to two lines. A list of four projects read in full beats eight that get skimmed.",
     period: "2022 — 2023",
-    role: "Product Engineer",
-    href: "https://example.com/notebook",
+    role: "Your role",
     tags: ["CRDT", "Editor", "Offline-first"],
   },
   {
-    title: "Prism",
+    title: "Fourth project",
     description:
-      "Open-source library for accessible overlays — dialogs, popovers, menus. Around four thousand stars on GitHub.",
+      "Add `href` to an entry and the row becomes a link — with an arrow that appears on hover.",
     period: "2021 — 2022",
-    role: "Maintainer",
-    href: "https://github.com/",
+    role: "Your role",
     tags: ["Open Source", "A11y", "TypeScript"],
   },
 ];
@@ -134,18 +135,17 @@ export type Position = {
   href?: string;
 };
 
+/** Platzhalter — durch echte Stationen ersetzen. */
 export const career: Position[] = [
   {
-    company: "Vercel",
+    company: "Current company",
     role: "Design Engineer",
     period: "2024 — now",
-    href: "https://vercel.com",
   },
   {
-    company: "Studio Nord",
+    company: "Previous studio",
     role: "Frontend Engineer",
     period: "2021 — 2024",
-    href: "https://example.com",
   },
   {
     company: "Independent",
