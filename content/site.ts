@@ -13,10 +13,10 @@ export const site = {
   name: "Leif Sanden",
   /** Kurzform für die Navigation und Metadaten. */
   shortName: "Leif",
-  role: "Web Developer & Systems Engineer",
+  role: "Photographer, Web Developer & Systems Engineer",
   /** Ein Satz. Erscheint als Meta-Description. */
   intro:
-    "I build websites for small businesses and run the servers behind them — from the first sketch to the machine it lives on.",
+    "I photograph, build websites, and run the servers they live on — the whole thing, from the lens to the machine.",
   location: "Germany",
   email: "admin@sanden-hosting.org",
   /** Absolute URL der Produktionsseite. Wird für OG-Tags und die Sitemap gebraucht. */
@@ -34,11 +34,11 @@ export const site = {
  */
 export const heroLines = [
   "Leif Sanden",
-  "builds websites",
-  "and runs the",
-  "servers behind them",
-  "for small businesses",
-  "[across Germany](/projects)",
+  "builds the site,",
+  "runs the server",
+  "and takes",
+  "the pictures",
+  "[that go on it](/photography)",
 ];
 
 /** Die Zeilen des Manifests auf der vorletzten Tafel. */
@@ -63,9 +63,10 @@ export type NavLink = {
 
 /** Primäre Navigation. */
 export const primaryLinks: NavLink[] = [
-  { label: "Craft", href: "/craft", description: "Interactions and details" },
-  { label: "Projects", href: "/projects", description: "Selected work" },
-  { label: "Notes", href: "/notes", description: "Thoughts on design and code" },
+  { label: "Photography", href: "/photography" },
+  { label: "Craft", href: "/craft" },
+  { label: "Projects", href: "/projects" },
+  { label: "Notes", href: "/notes" },
 ];
 
 /** Sekundäre Links (Social, Archiv). */

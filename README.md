@@ -49,6 +49,11 @@ geglättet, die Pfeiltasten springen von Kante zu Kante.
 **Navigation** — kein Menü, sondern eine Skala: ein Kästchen pro Abschnitt, das
 aktuelle gelb gefüllt. Beschriftet wird erst beim Zeigen (Radix Tooltip).
 
+**Photography** — Spaltenlayout, damit Hoch- und Querformate lückenlos
+nebeneinander stehen. Ein Klick öffnet die Lightbox (Radix Dialog, also mit
+Fokusfalle und Escape); Pfeiltasten blättern, der Fokus kehrt beim Schließen
+auf das angeklickte Bild zurück.
+
 **Craft** — Raster aus Karten, jede mit einer lauffähigen Interaktion darin.
 
 **Projekte / Notizen** — Zeilen mit Titel links, Zeitraum rechts, Haarlinie
@@ -69,6 +74,16 @@ ausgerichtet, `[Text](href)` wird zum Link.
 
 Wichtig: `site.url` auf die echte Domain setzen, bevor du deployst. Davon hängen
 Open-Graph-Tags, `sitemap.xml` und `robots.txt` ab.
+
+### `content/photos.ts`
+
+Ein Eintrag pro Bild. Die Dateien liegen unter `public/photos/`, `src` ist der
+Pfad ab `public`. `width` und `height` müssen den echten Pixelmaßen entsprechen
+— daraus reserviert der Browser den Platz, bevor das Bild geladen ist, sonst
+springt das Raster.
+
+Die sechs mitgelieferten `placeholder-*.jpg` sind erzeugte Farbflächen, keine
+Fotos. Ersetzen und die Liste anpassen.
 
 ### `content/notes/*.mdx`
 

@@ -4,6 +4,7 @@ import { IntroPanel } from "@/components/home/intro-panel";
 import { ManifestoPanel } from "@/components/home/manifesto-panel";
 import { Panel } from "@/components/home/panel";
 import { PosterPanel } from "@/components/home/poster-panel";
+import { photos } from "@/content/photos";
 import { craft, projects, site } from "@/content/site";
 import { getNotes } from "@/lib/notes";
 
@@ -14,6 +15,16 @@ export default async function HomePage() {
     <Canvas>
       <Panel label={site.role} width={1060}>
         <IntroPanel />
+      </Panel>
+
+      <Panel label="Photography" width={620}>
+        <PosterPanel
+          word="Photos"
+          href="/photography"
+          accent="red"
+          shape="circle"
+          meta={`${photos.length} frames`}
+        />
       </Panel>
 
       <Panel label="Craft" width={620}>
