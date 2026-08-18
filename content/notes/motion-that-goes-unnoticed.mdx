@@ -1,0 +1,36 @@
+---
+title: Motion that goes unnoticed
+date: 2026-04-18
+summary: The best animation is one nobody notices. It only explains what just happened.
+tags: [Motion, Interface]
+---
+
+There are two kinds of animation in an interface. One wants to be seen. The other wants to explain. Almost everything a product needs belongs to the second kind — and gets built like the first anyway.
+
+A movement explains when it answers a question the user would otherwise have to answer themselves: *Where did that come from? Where did it go? Do those things still belong together?*
+
+## The test
+
+Take any animation in your product and halve its duration. If nothing is lost, it was too long. Repeat until something breaks.
+
+<Callout>
+Most transitions in shipping interfaces sit between 400 and 600 ms. Nearly all of them work better at 180.
+</Callout>
+
+## An example
+
+The indicator below is not one element per tab, but a single one that travels. That is precisely the statement: there is a selection, and it moves — it is not created anew.
+
+<Figure caption="One indicator, three positions. The type inverts through a blend mode.">
+  <Demo name="tabs" />
+</Figure>
+
+The difference from three separate backgrounds fading in and out is tiny in code and large in perception. A travelling object creates continuity. Two cross-fading objects create a cut.
+
+## What I have settled on
+
+- **Springs over curves** for anything following a gesture. A `cubic-bezier` cannot know how fast the finger was.
+- **Curves over springs** for anything that happens on its own. Here determinism is a feature, not a shortcoming.
+- `prefers-reduced-motion` **not as an off switch** but as a swap: position instead of movement, opacity instead of displacement.
+
+Motion is not ornament applied at the end. It is the grammar an interface uses to narrate its own changes of state.

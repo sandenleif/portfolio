@@ -1,26 +1,236 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------- tokens */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Papier: die Leinwand ist grau, die Karten sind weiß. Der Kontrast
+     zwischen beiden trägt das ganze Layout — es gibt fast keine Rahmen. */
+  --paper: #ececec;
+  --bg: #fafafa;
+  --card: #ffffff;
+  --bg-subtle: #f2f2f2;
+
+  --fg: #000000;
+  --fg-muted: #6b6b6b;
+  --fg-faint: #a6a6a6;
+
+  --line: #e4e4e4;
+  --line-strong: #cfcfcf;
+
+  /* Vier Farben, ungemischt. Sie treten immer flächig auf, nie als Verlauf. */
+  --yellow: #ffff00;
+  --orange: #ff4d00;
+  --blue: #0000ff;
+  --red: #ff2d20;
+
+  --selection: #ffff00;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-yellow: var(--yellow);
+  --color-orange: var(--orange);
+  --color-blue: var(--blue);
+  --color-red: var(--red);
+
+  --font-sans: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --text-xxs: 0.6875rem;
+  --text-xxs--line-height: 1rem;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ------------------------------------------------------------------ base */
+
+html {
+  color-scheme: light;
+  background: var(--bg);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--selection);
+  color: #000;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------- utility */
+
+/* Die Plakatschrift: Helvetica-Schnitt, eng gesetzt, Zeilen berühren sich fast. */
+@utility display {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+@utility label {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.005em;
+  color: var(--fg-muted);
+}
+
+@utility card-surface {
+  background: var(--card);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.045);
+}
+
+/* Waagerechte Leinwand der Startseite: scrollt, zeigt aber keine Leiste. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------- prose */
+
+.prose {
+  color: var(--fg);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h2,
+.prose h3 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-top: 2.2em;
+  margin-bottom: -0.4em;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--fg-muted);
+}
+
+.prose a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms var(--ease-out-quart);
+}
+
+.prose a:hover {
+  text-decoration-color: var(--fg);
+}
+
+.prose strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-subtle);
+  padding: 0.1em 0.35em;
+}
+
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  background: var(--bg-subtle);
+  padding: 1.125rem 1.25rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--yellow);
+  padding-left: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.15rem;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li::marker {
+  color: var(--fg-faint);
+}
+
+.prose li + li {
+  margin-top: 0.3em;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin-block: 2.5em;
+}
+
+.prose img,
+.prose video {
+  width: 100%;
+}
+
+/* ------------------------------------------------------------ animations */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

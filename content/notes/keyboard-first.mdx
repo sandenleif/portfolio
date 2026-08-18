@@ -1,0 +1,47 @@
+---
+title: Keyboard first
+date: 2025-09-12
+summary: Design a menu for the mouse and you build two products. Design it for the keyboard and you build one.
+tags: [A11y, Interface]
+---
+
+A command menu is the most honest test of an interface. It has no illustration, no colour, no branding — only a list and the question of how quickly somebody gets to what they want.
+
+<Figure caption="Arrow keys navigate, ⏎ runs. The bar travels rather than jumps.">
+  <Demo name="command" />
+</Figure>
+
+## The order is not arbitrary
+
+Build the mouse interaction first and you get a hover state. The keyboard then gets a second, parallel state — and from that moment there are two truths about which entry is "active". Everyone knows the result: you press arrow-down and the bar jumps back to wherever the cursor happens to rest.
+
+Build the keyboard first and there is exactly one index. The mouse simply writes to it as it moves:
+
+```tsx
+onMouseMove={() => setActive(index)}
+```
+
+`onMouseMove` rather than `onMouseEnter` — otherwise a resting pointer takes the selection back the moment the list shifts underneath it.
+
+## Search that forgives
+
+Exact substring matching is too strict for a tool people operate without looking. A subsequence search costs twelve lines and finds "Go to start" even when somebody types `gts`:
+
+```ts
+function matches(query: string, label: string) {
+  const haystack = label.toLowerCase();
+  let cursor = 0;
+  for (const char of query.toLowerCase()) {
+    cursor = haystack.indexOf(char, cursor);
+    if (cursor === -1) return false;
+    cursor += 1;
+  }
+  return true;
+}
+```
+
+<Callout>
+When the result list changes, the active index has to reset to zero. Otherwise the selection points at nothing after the third keystroke.
+</Callout>
+
+Accessibility is not extra work bolted on at the end. It is simply the order in which you start.

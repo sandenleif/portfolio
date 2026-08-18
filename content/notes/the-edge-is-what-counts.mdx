@@ -1,0 +1,40 @@
+---
+title: The edge is what counts
+date: 2026-01-07
+summary: What happens when you keep pulling although there is nowhere left to go — and why that answer makes a product feel expensive.
+tags: [Details, Interaction]
+---
+
+Every control has limits. It gets interesting at exactly the point where somebody wants to go past them.
+
+The cheapest answer is nothing. The handle stops, the finger keeps moving, the connection breaks. For a fraction of a second the user is holding something that no longer responds.
+
+The expensive answer is to yield.
+
+<Figure caption="Past the end the track stretches — resistance grows logarithmically.">
+  <Demo name="slider" />
+</Figure>
+
+## Why logarithmic
+
+Linear resistance feels like a broken control: pull twice as far and you get twice the travel, just beyond the maximum. That is not a limit, that is a second scale.
+
+Logarithmic resistance gives the first few pixels away almost for free and then less and less:
+
+```ts
+function rubberband(distance: number) {
+  return Math.sign(distance) * Math.min(26, Math.log1p(Math.abs(distance)) * 7);
+}
+```
+
+The cap at 26 px matters. Without it the travel keeps growing — slowly, but visibly. With it you get the feeling of a material that stretches and then, at some point, does not.
+
+## The second half: coming back
+
+The stretch is half the work. The other half is the release. A spring with too little damping oscillates and feels rubbery. One with too much crawls back and feels sluggish.
+
+<Callout>
+Rule of thumb: critically damped plus ten percent. One overshoot, barely visible — no more.
+</Callout>
+
+Nobody will tell you they noticed. They will say the product feels good, and they will not be able to name a reason.
