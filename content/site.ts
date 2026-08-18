@@ -4,9 +4,9 @@
  * Alles, was auf der Seite an Text, Links und Einträgen erscheint, steht hier.
  * Zum Personalisieren nur diese Datei anpassen — die Komponenten bleiben unberührt.
  *
- * ACHTUNG: Projekte, Werdegang und Links sind Platzhalter und beschreiben
- * keine tatsächlichen Arbeitsverhältnisse. Vor dem Veröffentlichen durch
- * echte Angaben ersetzen.
+ * Projekte und Werdegang sind Entwürfe aus den auf sanden-hosting.org
+ * genannten Arbeiten — Zeiträume und Rollenbezeichnungen bitte prüfen.
+ * Die Social-Links außer GitHub zeigen noch ins Leere.
  */
 
 export const site = {
@@ -18,7 +18,7 @@ export const site = {
   intro:
     "I build interfaces that feel right — fast, quiet, and considered down to the last movement.",
   location: "Germany",
-  email: "admin@sanden-hosting.com",
+  email: "admin@sanden-hosting.org",
   /** Absolute URL der Produktionsseite. Wird für OG-Tags und die Sitemap gebraucht. */
   url: "https://example.com",
 } as const;
@@ -90,39 +90,45 @@ export type Project = {
   tags?: string[];
 };
 
-/** Platzhalter — durch echte Arbeiten ersetzen. */
+/**
+ * ENTWURF: aus den auf sanden-hosting.org genannten Arbeiten abgeleitet.
+ * Zeiträume, Rollenbezeichnungen und Beschreibungen bitte prüfen — und die
+ * fehlenden Links (sanden.visuals, Weindorf KG) ergänzen.
+ */
 export const projects: Project[] = [
   {
-    title: "First project",
+    title: "Sanden Hosting",
     description:
-      "One sentence on what it was. A design system, a dashboard, a tool — say what it did, not which framework built it.",
-    period: "2024 — now",
-    role: "Your role",
-    tags: ["React", "Design System", "Tokens"],
+      "Websites and hosting for small businesses across the German-speaking region — built, deployed and maintained by one person, on servers in Germany.",
+    period: "2023 — now",
+    role: "Founder, design and development",
+    href: "https://sanden-hosting.org",
+    tags: ["Next.js", "Hosting", "Ops"],
   },
   {
-    title: "Second project",
+    title: "mirobolic.com",
     description:
-      "The second line is where the constraint goes: the thing that made it hard, and what it cost to solve.",
-    period: "2023 — 2024",
-    role: "Your role",
-    tags: ["Next.js", "WebGL", "Streaming"],
+      "A résumé site for an IT administrator. One page, no scroll traps, readable on a phone in a waiting room.",
+    period: "2026",
+    role: "Design and development",
+    href: "https://mirobolic.com",
+    tags: ["Next.js", "Typography"],
   },
   {
-    title: "Third project",
+    title: "sanden.visuals",
     description:
-      "Keep these to two lines. A list of four projects read in full beats eight that get skimmed.",
-    period: "2022 — 2023",
-    role: "Your role",
-    tags: ["CRDT", "Editor", "Offline-first"],
+      "A photo gallery platform with client logins and ordering. Photographers upload, clients pick, the shop takes it from there.",
+    period: "2024",
+    role: "Design and development",
+    tags: ["Gallery", "Auth", "E-commerce"],
   },
   {
-    title: "Fourth project",
+    title: "Weindorf KG",
     description:
-      "Add `href` to an entry and the row becomes a link — with an arrow that appears on hover.",
-    period: "2021 — 2022",
-    role: "Your role",
-    tags: ["Open Source", "A11y", "TypeScript"],
+      "Website for an insurance office. The brief was trust before novelty — clear structure, no motion for its own sake.",
+    period: "2024",
+    role: "Design and development",
+    tags: ["Website", "CMS"],
   },
 ];
 
@@ -135,22 +141,16 @@ export type Position = {
   href?: string;
 };
 
-/** Platzhalter — durch echte Stationen ersetzen. */
+/**
+ * ENTWURF: nur die Station belegt, die aus sanden-hosting.org hervorgeht.
+ * Alles davor fehlt mir — Ausbildung, frühere Anstellungen, Freelance-Zeit.
+ */
 export const career: Position[] = [
   {
-    company: "Current company",
-    role: "Design Engineer",
-    period: "2024 — now",
-  },
-  {
-    company: "Previous studio",
-    role: "Frontend Engineer",
-    period: "2021 — 2024",
-  },
-  {
-    company: "Independent",
-    role: "Interface Design",
-    period: "2019 — 2021",
+    company: "Sanden Hosting",
+    role: "Founder — web design, development and server operations",
+    period: "2023 — now",
+    href: "https://sanden-hosting.org",
   },
 ];
 

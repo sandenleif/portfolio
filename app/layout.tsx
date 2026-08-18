@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter_Tight } from "next/font/google";
+import Link from "next/link";
 
 import { Nav } from "@/components/nav";
 import { site } from "@/content/site";
@@ -53,6 +54,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Nav />
         {children}
+        {/* Die Anbieterkennzeichnung muss von jeder Seite aus erreichbar sein,
+            darf aber nichts an sich ziehen — deshalb unten rechts, klein. */}
+        <Link
+          href="/legal"
+          className="label fixed right-6 bottom-[3.6vh] z-50 transition-colors duration-200 hover:text-fg"
+        >
+          Impressum
+        </Link>
       </body>
     </html>
   );
