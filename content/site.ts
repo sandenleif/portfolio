@@ -92,8 +92,8 @@ export type Project = {
 
 /**
  * ENTWURF: aus den auf sanden-hosting.org genannten Arbeiten abgeleitet.
- * Zeiträume, Rollenbezeichnungen und Beschreibungen bitte prüfen — und die
- * fehlenden Links (sanden.visuals, Weindorf KG) ergänzen.
+ * Zeiträume, Rollenbezeichnungen und Beschreibungen bitte prüfen — und den
+ * fehlenden Link zu sanden.visuals ergänzen.
  */
 export const projects: Project[] = [
   {
@@ -121,14 +121,6 @@ export const projects: Project[] = [
     period: "2024",
     role: "Design and development",
     tags: ["Gallery", "Auth", "E-commerce"],
-  },
-  {
-    title: "Weindorf KG",
-    description:
-      "Website for an insurance office. The brief was trust before novelty — clear structure, no motion for its own sake.",
-    period: "2024",
-    role: "Design and development",
-    tags: ["Website", "CMS"],
   },
 ];
 
