@@ -18,7 +18,7 @@ export const site = {
   intro:
     "I build interfaces that feel right — fast, quiet, and considered down to the last movement.",
   location: "Germany",
-  email: "sandenleif@gmail.com",
+  email: "admin@sanden-hosting.com",
   /** Absolute URL der Produktionsseite. Wird für OG-Tags und die Sitemap gebraucht. */
   url: "https://example.com",
 } as const;
@@ -70,7 +70,7 @@ export const primaryLinks: NavLink[] = [
 
 /** Sekundäre Links (Social, Archiv). */
 export const secondaryLinks: NavLink[] = [
-  { label: "GitHub", href: "https://github.com/", external: true },
+  { label: "GitHub", href: "https://github.com/sandenleif", external: true },
   { label: "X", href: "https://x.com/", external: true },
   { label: "LinkedIn", href: "https://linkedin.com/", external: true },
   { label: "Résumé", href: "/cv.pdf", external: true },
