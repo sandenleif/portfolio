@@ -143,13 +143,12 @@ export type Position = {
 };
 
 /**
- * ENTWURF. Der Ausbildungsbetrieb fehlt noch — `company` unten ersetzen.
- * Falls es davor weitere Stationen gab (Schule, Praktika, Anstellungen),
+ * Falls es vor 2023 weitere Stationen gab (Schule, Praktika, Anstellungen),
  * hier ergänzen; sortiert wird nach Beginn, neueste zuerst.
  */
 export const career: Position[] = [
   {
-    company: "Training company",
+    company: "Siloah St. Trudpert Klinikum Pforzheim",
     role: "Apprentice — IT specialist, system integration (Fachinformatiker für Systemintegration)",
     period: "2025 — now",
   },
