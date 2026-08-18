@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Gelbes Vollfeld, schwarzes L. Beides als Geometrie, nicht als Schrift:
+       ein Favicon kann sich auf keine installierte Schriftart verlassen. -->
+  <rect width="32" height="32" fill="#ffff00" />
+  <path d="M10 8.5h4.6v10.4H22v4.6H10z" fill="#000000" />
+</svg>
