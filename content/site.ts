@@ -20,7 +20,7 @@ export const site = {
   location: "Germany",
   email: "admin@sanden-hosting.org",
   /** Absolute URL der Produktionsseite. Wird für OG-Tags und die Sitemap gebraucht. */
-  url: "https://example.com",
+  url: "https://leifsanden.com",
 } as const;
 
 /* ------------------------------------------------------------------ hero */
