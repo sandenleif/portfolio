@@ -115,6 +115,15 @@ export const projects: Project[] = [
     tags: ["Next.js", "Typography"],
   },
   {
+    title: "Praxis Dr. med. Lakatos",
+    description:
+      "Site for a gynaecology practice in Karlsruhe — opening hours, prenatal diagnostics, Doctolib booking, and four languages, because that is who walks in.",
+    period: "2026",
+    role: "Design and development",
+    href: "https://wordpress-lakatos.sanden-hosting.org/",
+    tags: ["WordPress", "Multilingual", "Booking"],
+  },
+  {
     title: "sanden.visuals",
     description:
       "A photo gallery platform with client logins and ordering. Photographers upload, clients pick, the shop takes it from there.",
@@ -134,10 +143,16 @@ export type Position = {
 };
 
 /**
- * ENTWURF: nur die Station belegt, die aus sanden-hosting.org hervorgeht.
- * Alles davor fehlt mir — Ausbildung, frühere Anstellungen, Freelance-Zeit.
+ * ENTWURF. Der Ausbildungsbetrieb fehlt noch — `company` unten ersetzen.
+ * Falls es davor weitere Stationen gab (Schule, Praktika, Anstellungen),
+ * hier ergänzen; sortiert wird nach Beginn, neueste zuerst.
  */
 export const career: Position[] = [
+  {
+    company: "Training company",
+    role: "Apprentice — IT specialist, system integration (Fachinformatiker für Systemintegration)",
+    period: "2025 — now",
+  },
   {
     company: "Sanden Hosting",
     role: "Founder — web design, development and server operations",
